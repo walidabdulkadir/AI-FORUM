@@ -560,6 +560,39 @@ export default function Landing() {
         )}
             
       </main>
+
+      {/* 7. FOOTER SECTION */}
+      <footer className="bg-white border-t border-slate-200/80 py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p className="text-sm font-bold text-slate-900">Evangadi Forum</p>
+            <p className="text-xs text-slate-500 mt-0.5">
+              © {new Date().getFullYear()} · Learner-led Q&A
+            </p>
+          </div>
+          <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-600">
+            <button
+              type="button"
+              onClick={() => navigate('/auth')}
+              className="hover:text-slate-900 transition-colors"
+            >
+              Sign in
+            </button>
+            <span aria-hidden className="text-slate-300">
+              ·
+            </span>
+            <a href="#" className="hover:text-slate-900 transition-colors">
+              Privacy
+            </a>
+            <span aria-hidden className="text-slate-300">
+              ·
+            </span>
+            <a href="#" className="hover:text-slate-900 transition-colors">
+              Terms
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
