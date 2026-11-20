@@ -318,6 +318,93 @@ export default function Landing() {
             </div>
           </div>
         </section>
+
+        {/* 4. COHORT COURSEWORK SECTION */}
+        {!isAuthenticated && (
+          <>
+            <section className="py-16 sm:py-20 bg-white">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2">
+                  Built for cohort coursework
+                </h2>
+                <p className="text-sm sm:text-base text-slate-600 mb-10">
+                  Same patterns you use after sign-in, without a separate
+                  “marketing product.”
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                  <article className="bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                    <div
+                      aria-hidden
+                      className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                    >
+                      <Search size={22} strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-2">
+                      Find related work
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Keyword filters for exact matches, plus similarity search
+                      when you are still shaping the right vocabulary.
+                    </p>
+                  </article>
+
+                  <article className="bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                    <div
+                      aria-hidden
+                      className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                    >
+                      <MessageSquare size={22} strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-2">
+                      Readable threads
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Questions and answers stay structured so the group can
+                      reuse explanations before exams and interviews.
+                    </p>
+                  </article>
+
+                  <article className="bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                    <div
+                      aria-hidden
+                      className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                    >
+                      <Sparkles size={22} strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-2">
+                      Lightweight AI help
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Suggestions on your question draft and a quick relevance
+                      check on answer drafts. Always your choice to apply or
+                      post.
+                    </p>
+                  </article>
+
+                  <article className="bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-slate-300 transition-colors">
+                    <div
+                      aria-hidden
+                      className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                    >
+                      <Layers size={22} strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-base font-bold text-slate-900 mb-2">
+                      RAG over your course library
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Instructors and cohorts add PDFs, syllabi, and notes into
+                      a controlled corpus. When you ask, the system retrieves
+                      the most relevant passages and attaches them to the
+                      prompt, so explanations stay tied to your class materials,
+                      not the open web.
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </div>
   );
