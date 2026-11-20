@@ -504,6 +504,61 @@ export default function Landing() {
                 </ol>
               </div>
             </section>
+
+
+{/* Commit 6: Final CTA Section */}
+            <section className="py-16 sm:py-20 bg-slate-50/70">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-12 text-center shadow-xs">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2.5">
+                    Ready when you are
+                  </h2>
+                  <p className="text-sm sm:text-base text-slate-600 max-w-md mx-auto mb-7">
+                    Create a free learner account to post, reply, and search the
+                    forum index.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => navigate('/auth')}
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
+                  >
+                    Create free account
+                    <ArrowRight size={16} aria-hidden />
+                  </button>
+                </div>
+              </div>
+            </section>
+        
+        {isAuthenticated && (
+          <section className="py-16 sm:py-20 bg-white border-t border-slate-100">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <p className="text-[11px] font-bold uppercase tracking-wider text-orange-600 mb-2">
+                Signed in
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3">
+                Back to your workspace
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mb-7">
+                Home has the live feed, shortcuts, and search. Your topics lists
+                only threads you started. Course-document RAG (ingest, retrieve,
+                cite) ties the Knowledge base to threads. Scroll to{' '}
+                <strong className="font-semibold text-slate-900">
+                  Course RAG
+                </strong>{' '}
+                on this page for the full picture.
+              </p>
+              <button
+                type="button"
+                onClick={() => navigate('/dashboard')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
+              >
+                Open forum home
+                <ArrowRight size={16} aria-hidden />
+              </button>
+            </div>
+          </section>
+        )}
+            
       </main>
     </div>
   );
