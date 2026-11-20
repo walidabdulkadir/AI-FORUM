@@ -229,6 +229,95 @@ export default function Landing() {
             </aside>
           </div>
         </section>
+
+        {/* 3. COURSE RAG SECTION */}
+        <section
+          id="course-rag"
+          aria-labelledby="rag-heading"
+          className="py-16 sm:py-20 bg-slate-50/70 border-y border-slate-100"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-orange-600 mb-2">
+              Retrieval-augmented generation
+            </p>
+            <h2
+              id="rag-heading"
+              className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-3"
+            >
+              How course RAG works with the forum
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-10">
+              Forum search already helps you find <em>similar questions</em>{' '}
+              from peers. RAG goes further: it finds{' '}
+              <em>evidence inside your own documents</em> (readings, rubrics,
+              lab specs) and surfaces those snippets when you write or review an
+              answer. That keeps AI assistance on-policy for Evangadi-style
+              courses and reduces “confident but wrong” generic answers.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs">
+                <span
+                  aria-hidden
+                  className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                >
+                  <FileText size={20} />
+                </span>
+                <h3 className="text-base font-bold text-slate-900 mb-2">
+                  Ingest & chunk
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Upload or connect course files; split them into overlapping
+                  chunks and store embeddings the same way we already embed
+                  questions, so retrieval stays fast and auditable.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs">
+                <span
+                  aria-hidden
+                  className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                >
+                  <Database size={20} />
+                </span>
+                <h3 className="text-base font-bold text-slate-900 mb-2">
+                  Retrieve at question time
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  When you open Ask or run a search, the app pulls the
+                  top-matching chunks from the cohort corpus (with scores), not
+                  just other threads. That is ideal for “what does the syllabus
+                  say about…” style questions.
+                </p>
+              </div>
+
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs">
+                <span
+                  aria-hidden
+                  className="w-10 h-10 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center mb-4"
+                >
+                  <Sparkles size={20} />
+                </span>
+                <h3 className="text-base font-bold text-slate-900 mb-2">
+                  Grounded responses
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Downstream prompts quote or summarize only from retrieved
+                  spans, with room for instructors to review sources. The UI
+                  makes it obvious when an answer drew on RAG versus peer
+                  replies alone.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-200/80 rounded-xl p-4 sm:px-6 text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Live forum threads, semantic question search, draft/fit AI
+              helpers, and this RAG pipeline work together: uploads and access
+              control live in the Knowledge base per cohort, and RAG-backed
+              context shows up in the same thread view you already use.
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
