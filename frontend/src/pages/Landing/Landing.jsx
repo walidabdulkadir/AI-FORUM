@@ -405,6 +405,105 @@ export default function Landing() {
             </section>
           </>
         )}
+
+ {/* 5. HOW IT WORKS SECTION */}
+            <section
+              id="how-it-works"
+              aria-labelledby="how-heading"
+              className="py-16 sm:py-20 bg-slate-50/70 border-t border-slate-100"
+            >
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2
+                  id="how-heading"
+                  className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2"
+                >
+                  How it works
+                </h2>
+                <p className="text-sm sm:text-base text-slate-600 mb-10">
+                  Four steps from question to searchable knowledge for the next
+                  person.
+                </p>
+
+                <ol className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                    <span
+                      aria-hidden
+                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                    >
+                      <PenSquare size={18} />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                        Ask with context
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Title, environment, errors, and what you tried, so peers
+                        reproduce before they teach.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                    <span
+                      aria-hidden
+                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                    >
+                      <MessageSquare size={18} />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                        Get answers
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Replies live in one thread with markdown and code
+                        blocks, visible to everyone in the cohort.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                    <span
+                      aria-hidden
+                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                    >
+                      <Search size={18} />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                        Search two ways
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Classic text search on the feed, or semantic search when
+                        you want “questions like this one.”
+                      </p>
+                    </div>
+                  </li>
+
+                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                    <span
+                      aria-hidden
+                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                    >
+                      <Library size={18} />
+                    </span>
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                        Own your trail
+                      </h3>
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        Your topics list keeps authorship clear. The Knowledge
+                        base hosts uploads and RAG retrieval so answers can cite
+                        your materials. See{' '}
+                        <strong className="font-semibold text-slate-900">
+                          Course RAG
+                        </strong>{' '}
+                        above for the full pipeline.
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </section>
       </main>
     </div>
   );
