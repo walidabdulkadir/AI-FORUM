@@ -1,0 +1,34 @@
+### Health Check
+GET http://localhost:5000/health
+### Register a new user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Abebe",
+  "lastName": "Kebede",
+  "email": "abebe.t04.test@example.com",
+  "password": "TestPass123!"
+}
+### Test duplicate email
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Abebe",
+  "lastName": "Kebede",
+  "email": "abebe.t04.test@example.com",
+  "password": "TestPass123!"
+}
+
+### Test registration validation
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Ab",
+  "lastName": "",
+  "email": "invalid-email",
+  "password": "123"
+}
+
