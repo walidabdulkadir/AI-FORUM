@@ -2,6 +2,7 @@
  * Auth: combined login + register form; switches mode without changing routes.
  */
 import { useState } from "react";
+import styles from "./Auth.module.css";
 
 import { motion as Motion, AnimatePresence } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -14,7 +15,6 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { useAuth } from "../../Context/AuthContext";
-import styles from "./Auth.module.css";
 
 export default function Auth() {
   const navigate = useNavigate();
