@@ -1,5 +1,5 @@
-import { motion as Motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { motion as Motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
   Sparkles,
   MessageSquare,
@@ -11,8 +11,8 @@ import {
   Layers,
   FileText,
   Database,
-} from 'lucide-react';
-import { useAuth } from '../../contexts/AuthContext';
+} from "lucide-react";
+import { useAuth } from "../../Context/AuthContext";
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -20,14 +20,14 @@ export default function Landing() {
 
   const scrollToHowItWorks = () => {
     document
-      .getElementById('how-it-works')
-      ?.scrollIntoView({ behavior: 'smooth' });
+      .getElementById("how-it-works")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToCourseRag = () => {
     document
-      .getElementById('course-rag')
-      ?.scrollIntoView({ behavior: 'smooth' });
+      .getElementById("course-rag")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -37,7 +37,7 @@ export default function Landing() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           <button
             type="button"
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
             aria-label="Evangadi Forum home"
             className="flex items-center gap-3 text-left group focus:outline-none"
           >
@@ -57,10 +57,13 @@ export default function Landing() {
             </span>
           </button>
 
-          <nav aria-label="Marketing" className="hidden md:flex items-center gap-7">
+          <nav
+            aria-label="Marketing"
+            className="hidden md:flex items-center gap-7"
+          >
             <button
               type="button"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
             >
               Overview
@@ -85,7 +88,7 @@ export default function Landing() {
             {isAuthenticated ? (
               <button
                 type="button"
-                onClick={() => navigate('/dashboard')}
+                onClick={() => navigate("/dashboard")}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
               >
                 Open forum
@@ -95,14 +98,14 @@ export default function Landing() {
               <>
                 <button
                   type="button"
-                  onClick={() => navigate('/auth')}
+                  onClick={() => navigate("/auth")}
                   className="px-3.5 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors"
                 >
                   Sign in
                 </button>
                 <button
                   type="button"
-                  onClick={() => navigate('/auth')}
+                  onClick={() => navigate("/auth")}
                   className="px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
                 >
                   Create account
@@ -114,7 +117,7 @@ export default function Landing() {
       </header>
 
       <main>
-    {/* 2. HERO SECTION */}
+        {/* 2. HERO SECTION */}
         <section className="py-14 sm:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-7">
@@ -132,7 +135,7 @@ export default function Landing() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 }}
               >
-                A calm place for{' '}
+                A calm place for{" "}
                 <span className="text-orange-500">technical Q&A</span>
               </Motion.h1>
               <Motion.p
@@ -143,10 +146,10 @@ export default function Landing() {
               >
                 Post with enough context for peers to help in one pass. Search
                 the archive by phrase or by meaning, keep your threads in one
-                place, and ground questions in{' '}
+                place, and ground questions in{" "}
                 <strong className="font-semibold text-slate-900">
                   course documents
-                </strong>{' '}
+                </strong>{" "}
                 with retrieval-augmented generation (RAG) so answers cite the
                 right syllabus, readings, and handouts.
               </Motion.p>
@@ -159,11 +162,11 @@ export default function Landing() {
                 <button
                   type="button"
                   onClick={() =>
-                    navigate(isAuthenticated ? '/dashboard' : '/auth')
+                    navigate(isAuthenticated ? "/dashboard" : "/auth")
                   }
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
                 >
-                  {isAuthenticated ? 'Go to home' : 'Get started'}
+                  {isAuthenticated ? "Go to home" : "Get started"}
                   <ArrowRight size={16} aria-hidden />
                 </button>
                 {!isAuthenticated && (
@@ -219,7 +222,7 @@ export default function Landing() {
                   <span className="leading-relaxed">
                     <strong className="font-semibold text-slate-900">
                       Course RAG:
-                    </strong>{' '}
+                    </strong>{" "}
                     upload or sync course materials, retrieve the best chunks
                     for each question, and answer with citations, not generic
                     web text.
@@ -247,8 +250,8 @@ export default function Landing() {
               How course RAG works with the forum
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl mb-10">
-              Forum search already helps you find <em>similar questions</em>{' '}
-              from peers. RAG goes further: it finds{' '}
+              Forum search already helps you find <em>similar questions</em>{" "}
+              from peers. RAG goes further: it finds{" "}
               <em>evidence inside your own documents</em> (readings, rubrics,
               lab specs) and surfaces those snippets when you write or review an
               answer. That keeps AI assistance on-policy for Evangadi-style
@@ -406,129 +409,128 @@ export default function Landing() {
           </>
         )}
 
- {/* 5. HOW IT WORKS SECTION */}
-            <section
-              id="how-it-works"
-              aria-labelledby="how-heading"
-              className="py-16 sm:py-20 bg-slate-50/70 border-t border-slate-100"
+        {/* 5. HOW IT WORKS SECTION */}
+        <section
+          id="how-it-works"
+          aria-labelledby="how-heading"
+          className="py-16 sm:py-20 bg-slate-50/70 border-t border-slate-100"
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2
+              id="how-heading"
+              className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2"
             >
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2
-                  id="how-heading"
-                  className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2"
+              How it works
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600 mb-10">
+              Four steps from question to searchable knowledge for the next
+              person.
+            </p>
+
+            <ol className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
                 >
-                  How it works
-                </h2>
-                <p className="text-sm sm:text-base text-slate-600 mb-10">
-                  Four steps from question to searchable knowledge for the next
-                  person.
-                </p>
-
-                <ol className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
-                    <span
-                      aria-hidden
-                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <PenSquare size={18} />
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                        Ask with context
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Title, environment, errors, and what you tried, so peers
-                        reproduce before they teach.
-                      </p>
-                    </div>
-                  </li>
-
-                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
-                    <span
-                      aria-hidden
-                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <MessageSquare size={18} />
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                        Get answers
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Replies live in one thread with markdown and code
-                        blocks, visible to everyone in the cohort.
-                      </p>
-                    </div>
-                  </li>
-
-                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
-                    <span
-                      aria-hidden
-                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <Search size={18} />
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                        Search two ways
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Classic text search on the feed, or semantic search when
-                        you want “questions like this one.”
-                      </p>
-                    </div>
-                  </li>
-
-                  <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
-                    <span
-                      aria-hidden
-                      className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <Library size={18} />
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 mb-1.5">
-                        Own your trail
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        Your topics list keeps authorship clear. The Knowledge
-                        base hosts uploads and RAG retrieval so answers can cite
-                        your materials. See{' '}
-                        <strong className="font-semibold text-slate-900">
-                          Course RAG
-                        </strong>{' '}
-                        above for the full pipeline.
-                      </p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </section>
-
-
-{/* Commit 6: Final CTA Section */}
-            <section className="py-16 sm:py-20 bg-slate-50/70">
-              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-12 text-center shadow-xs">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2.5">
-                    Ready when you are
-                  </h2>
-                  <p className="text-sm sm:text-base text-slate-600 max-w-md mx-auto mb-7">
-                    Create a free learner account to post, reply, and search the
-                    forum index.
+                  <PenSquare size={18} />
+                </span>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                    Ask with context
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Title, environment, errors, and what you tried, so peers
+                    reproduce before they teach.
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => navigate('/auth')}
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
-                  >
-                    Create free account
-                    <ArrowRight size={16} aria-hidden />
-                  </button>
                 </div>
-              </div>
-            </section>
-        
+              </li>
+
+              <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                >
+                  <MessageSquare size={18} />
+                </span>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                    Get answers
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Replies live in one thread with markdown and code blocks,
+                    visible to everyone in the cohort.
+                  </p>
+                </div>
+              </li>
+
+              <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                >
+                  <Search size={18} />
+                </span>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                    Search two ways
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Classic text search on the feed, or semantic search when you
+                    want “questions like this one.”
+                  </p>
+                </div>
+              </li>
+
+              <li className="bg-white border border-slate-200/80 rounded-2xl p-6 flex items-start gap-4">
+                <span
+                  aria-hidden
+                  className="w-9 h-9 rounded-lg bg-orange-50 text-orange-500 flex items-center justify-center shrink-0 mt-0.5"
+                >
+                  <Library size={18} />
+                </span>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 mb-1.5">
+                    Own your trail
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Your topics list keeps authorship clear. The Knowledge base
+                    hosts uploads and RAG retrieval so answers can cite your
+                    materials. See{" "}
+                    <strong className="font-semibold text-slate-900">
+                      Course RAG
+                    </strong>{" "}
+                    above for the full pipeline.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        {/* Commit 6: Final CTA Section */}
+        <section className="py-16 sm:py-20 bg-slate-50/70">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white border border-slate-200/80 rounded-2xl p-8 sm:p-12 text-center shadow-xs">
+              <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mb-2.5">
+                Ready when you are
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 max-w-md mx-auto mb-7">
+                Create a free learner account to post, reply, and search the
+                forum index.
+              </p>
+              <button
+                type="button"
+                onClick={() => navigate("/auth")}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
+              >
+                Create free account
+                <ArrowRight size={16} aria-hidden />
+              </button>
+            </div>
+          </div>
+        </section>
+
         {isAuthenticated && (
           <section className="py-16 sm:py-20 bg-white border-t border-slate-100">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -541,15 +543,15 @@ export default function Landing() {
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mb-7">
                 Home has the live feed, shortcuts, and search. Your topics lists
                 only threads you started. Course-document RAG (ingest, retrieve,
-                cite) ties the Knowledge base to threads. Scroll to{' '}
+                cite) ties the Knowledge base to threads. Scroll to{" "}
                 <strong className="font-semibold text-slate-900">
                   Course RAG
-                </strong>{' '}
+                </strong>{" "}
                 on this page for the full picture.
               </p>
               <button
                 type="button"
-                onClick={() => navigate('/dashboard')}
+                onClick={() => navigate("/dashboard")}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold shadow-sm transition-colors"
               >
                 Open forum home
@@ -558,7 +560,6 @@ export default function Landing() {
             </div>
           </section>
         )}
-            
       </main>
 
       {/* 7. FOOTER SECTION */}
@@ -573,7 +574,7 @@ export default function Landing() {
           <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-600">
             <button
               type="button"
-              onClick={() => navigate('/auth')}
+              onClick={() => navigate("/auth")}
               className="hover:text-slate-900 transition-colors"
             >
               Sign in
